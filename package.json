@@ -1,6 +1,5 @@
 {
   "devDependencies": {
-    "@mhlabs/cfn-diagram": "1.1.24",
     "aws-cdk": "2.14.0",
     "cdk-dia": "^0.3.0"
   }
