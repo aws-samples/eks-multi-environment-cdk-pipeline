@@ -116,7 +116,8 @@ class EKSEnvironment(cdk.Construct):
             vpc=cast(ec2.IVpc, self.vpc),
             # Use /28 subnets for the Control plane cross account ENIs
             # as recommended in https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html
-            vpc_subnets=[ec2.SubnetSelection(subnet_group_name="eks-control-plane")],
+            vpc_subnets=[ec2.SubnetSelection(
+                subnet_group_name="eks-control-plane")],
             masters_role=cast(iam.IRole, self.cluster_admin_role),
             default_capacity=0,
             security_group=cast(ec2.ISecurityGroup, eks_security_group),
@@ -347,7 +348,8 @@ class EKSEnvironment(cdk.Construct):
                 "replicaCount": 2
             }
         )
-        aws_lb_controller_chart.node.add_dependency(aws_lb_controller_service_account)
+        aws_lb_controller_chart.node.add_dependency(
+            aws_lb_controller_service_account)
 
     def _deploy_bastion(self):
         # Create an Instance Profile for our Admin Role to assume w/EC2
@@ -355,13 +357,14 @@ class EKSEnvironment(cdk.Construct):
             self, "ClusterAdminRoleInstanceProfile",
             roles=[self.cluster_admin_role.role_name]
         )
-        cluster_admin_role_instance_profile.node.add_dependency(self.cluster_admin_role)
+        cluster_admin_role_instance_profile.node.add_dependency(
+            self.cluster_admin_role)
 
         # Another way into our Bastion is via Systems Manager Session Manager
         self.cluster_admin_role.add_managed_policy(
             iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMManagedInstanceCore"))
 
-        # policy to retrieve GitHub secrets from secretsmanager for Flux boostrap command
+        # policy to retrieve GitHub secrets from secretsmanager for Flux bootstrap command
         bastion_secrets_manager_policy = {
             "Effect": "Allow",
             "Action": "secretsmanager:GetSecretValue",

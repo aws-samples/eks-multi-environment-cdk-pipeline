@@ -8,3 +8,4 @@ mypy
 safety
 types-requests
 monocdk-nag
+aws-cdk.core==1.143.0

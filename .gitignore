@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# CDK Context & Staging files
+cdk.context.json
+.cdk.staging/
+cdk.out/
+*.tabl.json
+
+# Local state files & OS specifics
+.DS_Store
+node_modules/
+lerna-debug.log
+dist/
+pack/
+.BUILD_COMPLETED
+.local-npm/
+.tools/
+coverage/
+.nyc_output
+.nycrc
+.LAST_BUILD
+*.sw[a-z]
+*~
+.idea
+*.iml
+junit.xml
+
+
+# Store launch config in repo but not settings
+.vscode/settings.json
+/.favorites.json

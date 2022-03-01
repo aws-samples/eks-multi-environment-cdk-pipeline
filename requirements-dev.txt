@@ -10,17 +10,19 @@ attrs==21.4.0
     # via
     #   cattrs
     #   jsii
-aws-cdk.cloud-assembly-schema==1.144.0
+aws-cdk-cloud-assembly-schema==1.143.0
     # via
-    #   aws-cdk.core
-    #   aws-cdk.cx-api
-aws-cdk.core==1.144.0
-    # via monocdk-nag
-aws-cdk.cx-api==1.144.0
-    # via aws-cdk.core
-aws-cdk.region-info==1.144.0
-    # via aws-cdk.core
-bandit==1.7.2
+    #   aws-cdk-core
+    #   aws-cdk-cx-api
+aws-cdk-core==1.143.0
+    # via
+    #   -r requirements-dev.in
+    #   monocdk-nag
+aws-cdk-cx-api==1.143.0
+    # via aws-cdk-core
+aws-cdk-region-info==1.143.0
+    # via aws-cdk-core
+bandit==1.7.3
     # via -r requirements-dev.in
 black==22.1.0
     # via -r requirements-dev.in
@@ -28,18 +30,18 @@ cattrs==1.10.0
     # via jsii
 certifi==2021.10.8
     # via requests
-charset-normalizer==2.0.11
+charset-normalizer==2.0.12
     # via requests
-click==8.0.3
+click==8.0.4
     # via
     #   black
     #   safety
-constructs==3.3.213
+constructs==3.3.229
     # via
-    #   aws-cdk.core
+    #   aws-cdk-core
     #   monocdk
     #   monocdk-nag
-coverage==6.3.1
+coverage==6.3.2
     # via -r requirements-dev.in
 dparse==0.5.1
     # via safety
@@ -47,7 +49,7 @@ flake8==4.0.1
     # via -r requirements-dev.in
 gitdb==4.0.9
     # via gitpython
-gitpython==3.1.26
+gitpython==3.1.27
     # via bandit
 idna==3.3
     # via requests
@@ -60,12 +62,12 @@ isort==5.10.1
     # via
     #   -r requirements-dev.in
     #   pylint
-jsii==1.53.0
+jsii==1.54.0
     # via
-    #   aws-cdk.cloud-assembly-schema
-    #   aws-cdk.core
-    #   aws-cdk.cx-api
-    #   aws-cdk.region-info
+    #   aws-cdk-cloud-assembly-schema
+    #   aws-cdk-core
+    #   aws-cdk-cx-api
+    #   aws-cdk-region-info
     #   constructs
     #   monocdk
     #   monocdk-nag
@@ -75,9 +77,9 @@ mccabe==0.6.1
     # via
     #   flake8
     #   pylint
-monocdk==1.144.0
+monocdk==1.146.0
     # via monocdk-nag
-monocdk-nag==1.4.49
+monocdk-nag==1.7.4
     # via -r requirements-dev.in
 mypy==0.931
     # via -r requirements-dev.in
@@ -93,16 +95,16 @@ pathspec==0.9.0
     # via black
 pbr==5.8.1
     # via stevedore
-platformdirs==2.5.0
+platformdirs==2.5.1
     # via
     #   black
     #   pylint
 publication==0.0.3
     # via
-    #   aws-cdk.cloud-assembly-schema
-    #   aws-cdk.core
-    #   aws-cdk.cx-api
-    #   aws-cdk.region-info
+    #   aws-cdk-cloud-assembly-schema
+    #   aws-cdk-core
+    #   aws-cdk-cx-api
+    #   aws-cdk-region-info
     #   constructs
     #   monocdk
     #   monocdk-nag
@@ -143,11 +145,11 @@ typed-ast==1.5.2
     #   astroid
     #   black
     #   mypy
-types-requests==2.27.9
+types-requests==2.27.11
     # via -r requirements-dev.in
 types-urllib3==1.26.9
     # via types-requests
-typing-extensions==4.0.1
+typing-extensions==4.1.1
     # via
     #   astroid
     #   black

@@ -37,8 +37,6 @@ app = core.App()
 eks_dev_props = EKSEnvironmentProps(
     env_name="dev",
     cluster_name="eks",
-    flux_config_repo_name="flux-eks-gitops-config",
-    flux_config_branch_name="eks-multi-env",
 )
 
 EKSMultiEnv(app,

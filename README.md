@@ -36,7 +36,7 @@ constructed from multiple environments. Every EKS Environment have 2 layers:
     4. Fargate-profile in the `default` namespace for pods labeled with `fargate: enabled` label
     5. Bastion host is deployed to manage access to the EKS cluster
     6. Flux Controller installed via User-Data script on the Bastion. This is because that at the time of writing this
-       project, Flux V2 have to be bootstrapped using its own CLI.
+       project, Flux V2 have to be bootstrapped using its the CLI.
     7. Cluster-Autoscaler is deployed with priority expander between Spot and OnDemand instances
     8. AWS Load Balancer Controller is deployed
 
@@ -77,8 +77,9 @@ This is a high-level diagram of the services and configurations that will be dep
 
 - CDK Installed -
   see [Getting Started With the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/getting_started.html)
-- Python3.7 installed
-- Fork the [flux-eks-gitops-config](https://github.com/aws-samples/flux-eks-gitops-config) repository from aws-samples. This repository holds flux configuration for the cluster add-ons and applications
+- Python3.7 (or above) installed
+- Fork the [flux-eks-gitops-config](https://github.com/aws-samples/flux-eks-gitops-config) repository from aws-samples. This repository holds flux configuration for the cluster add-ons and applications.
+When the cluster will be created using the pipeline, flux will bootstrap itself, and deploy everything that is in the [flux-eks-gitops-config](https://github.com/aws-samples/flux-eks-gitops-config) repository. Pay attention that the CDK code is pointing to the `eks-multi-env` branch and not the `main` branch. To learn more about the part of how flux deploys the add-ons & applications to the cluster, please read the docs in the [flux-eks-gitops-config](https://github.com/aws-samples/flux-eks-gitops-config) repository.
 
 ### Clone the code
 
@@ -92,15 +93,14 @@ cd eks-multi-environment-cdk-pipeline
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-# [Optional] Needed to upgrade dependencies and cleanup unused packages
-pip install pip-tools==6.2.0
+pip install pip-tools==6.5.1
 pip-compile --upgrade  -o requirements-dev.txt requirements-dev.in
 pip-compile --upgrade  -o requirements.txt requirements.in
 ./scripts/install-deps.sh
 ./scripts/run-tests.sh
 ```
 
-> At this time, we are not using the latest version of cdk but the `1.119.0`
+> At this time, we are using CDK version 1, with specific version "pinned" to `1.143.0`
 
 ### Bootstrap CDK In the Target Region/s
 

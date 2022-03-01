@@ -77,7 +77,8 @@ class Pipeline(cdk.Stack):
 
     @staticmethod
     def _get_cdk_cli_version() -> str:
-        package_json_path = Path(__file__).resolve().parent.joinpath("package.json")
+        package_json_path = Path(
+            __file__).resolve().parent.joinpath("package.json")
         with open(package_json_path) as package_json_file:
             package_json = json.load(package_json_file)
         cdk_cli_version = str(package_json["devDependencies"]["aws-cdk"])
@@ -87,8 +88,6 @@ class Pipeline(cdk.Stack):
         eks_pre_production_props = EKSEnvironmentProps(
             env_name="pre-production",
             cluster_name="eks-multi-env",
-            flux_config_repo_name=self.pipeline_repository_name,
-            flux_config_branch_name=self.pipeline_repository_branch,
         )
 
         pre_production_stage = EKSMultiEnv(
@@ -110,8 +109,6 @@ class Pipeline(cdk.Stack):
         eks_production_props = EKSEnvironmentProps(
             env_name="production",
             cluster_name="eks-multi-env",
-            flux_config_repo_name=self.pipeline_repository_name,
-            flux_config_branch_name=self.pipeline_repository_branch,
         )
         production_stage = EKSMultiEnv(
             self,
