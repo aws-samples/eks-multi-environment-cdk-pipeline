@@ -43,7 +43,7 @@ constructs==3.3.229
     #   monocdk-nag
 coverage==6.3.2
     # via -r requirements-dev.in
-dparse==0.5.1
+dparse==0.5.2
     # via safety
 flake8==4.0.1
     # via -r requirements-dev.in
@@ -53,11 +53,6 @@ gitpython==3.1.27
     # via bandit
 idna==3.3
     # via requests
-importlib-metadata==4.2.0
-    # via
-    #   click
-    #   flake8
-    #   stevedore
 isort==5.10.1
     # via
     #   -r requirements-dev.in
@@ -119,9 +114,7 @@ pyparsing==3.0.7
 python-dateutil==2.8.2
     # via jsii
 pyyaml==6.0
-    # via
-    #   bandit
-    #   dparse
+    # via bandit
 requests==2.27.1
     # via safety
 safety==1.10.3
@@ -140,31 +133,18 @@ tomli==2.0.1
     # via
     #   black
     #   mypy
-typed-ast==1.5.2
-    # via
-    #   astroid
-    #   black
-    #   mypy
 types-requests==2.27.11
     # via -r requirements-dev.in
 types-urllib3==1.26.9
     # via types-requests
 typing-extensions==4.1.1
     # via
-    #   astroid
-    #   black
-    #   cattrs
-    #   gitpython
-    #   importlib-metadata
     #   jsii
     #   mypy
-    #   pylint
 urllib3==1.26.8
     # via requests
 wrapt==1.13.3
     # via astroid
-zipp==3.7.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
